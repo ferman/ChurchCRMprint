@@ -17,7 +17,7 @@
 		<br />
 		<div v-for="person in info">
 		  {{ person.text }}
-		  <button>Print</button><br /><br />
+		  <button v-on:click="print( person.text )">Print</button><br /><br />
 		</div>
 	</div>
 	<form action="print.php" method="get">

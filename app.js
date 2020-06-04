@@ -7,10 +7,16 @@ new Vue({
 	},
 	mounted () {
 	  axios
-		.get('http://localhost/churchcrm/api/persons/search/john')
+		.get('http://churchcrmprint.local/name.json')
 		.then(response => (this.info = response.data))
 		.catch(error => {
 			console.log(error)
 		})
-	}
+	},
+	methods: {
+    	print: function (event) {
+			// `this` inside methods points to the Vue instance
+			fetch("print.php?name=john&id=1")
+	    }
+    }
 });
